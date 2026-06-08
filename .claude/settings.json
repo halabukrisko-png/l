@@ -43,6 +43,17 @@
         "--header",
         "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
       ]
+    },
+    "zafronix-fifa-wc": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: zafronix-fifa-world-cup-api.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
     }
   }
 }
