@@ -11,7 +11,7 @@
         "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
       ]
     },
-    "RapidAPI Hub - Football Prediction World Cup 2026 Match Predictions": {
+    "RapidAPI Hub - Football Prediction  World Cup 2026 Match Predictions": {
       "command": "npx",
       "args": [
         "mcp-remote",
