@@ -1,28 +1,6 @@
 {
   "mcpServers": {
-    "sports-odds-intelligence": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host: sports-odds-intelligence-api.p.rapidapi.com",
-        "--header",
-        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
-      ]
-    },
-    "football-prediction-wc2026": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host: football-prediction-world-cup-2026-match-predictions.p.rapidapi.com",
-        "--header",
-        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
-      ]
-    },
-    "wc2026-live": {
+    "RapidAPI Hub - World Cup 2026 Live API": {
       "command": "npx",
       "args": [
         "mcp-remote",
@@ -33,7 +11,29 @@
         "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
       ]
     },
-    "worldcup-travel-deals": {
+    "RapidAPI Hub - Football Prediction World Cup 2026 Match Predictions": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: football-prediction-world-cup-2026-match-predictions.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    },
+    "RapidAPI Hub - Sports Odds Intelligence API": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: sports-odds-intelligence-api.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    },
+    "RapidAPI Hub - WorldCupTravelDealsAPI": {
       "command": "npx",
       "args": [
         "mcp-remote",
@@ -44,7 +44,7 @@
         "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
       ]
     },
-    "zafronix-fifa-wc": {
+    "RapidAPI Hub - Zafronix FIFA World Cup API": {
       "command": "npx",
       "args": [
         "mcp-remote",
