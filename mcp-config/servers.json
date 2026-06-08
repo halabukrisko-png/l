@@ -1,0 +1,25 @@
+{
+  "note": "Reference copy of MCP server configurations. Active config lives in .claude/settings.json",
+  "mcpServers": {
+    "sports-odds-intelligence": {
+      "description": "Live odds, odds movement detection, value bet identification",
+      "rapidapi_host": "sports-odds-intelligence-api.p.rapidapi.com",
+      "docs": "https://rapidapi.com/search/sports-odds-intelligence"
+    },
+    "football-prediction-wc2026": {
+      "description": "WC 2026 match predictions, probability models, expected outcomes",
+      "rapidapi_host": "football-prediction-world-cup-2026-match-predictions.p.rapidapi.com",
+      "docs": "https://rapidapi.com/search/football-prediction-world-cup-2026"
+    },
+    "wc2026-live": {
+      "description": "Live scores, lineups, match events, real-time data",
+      "rapidapi_host": "world-cup-2026-live-api.p.rapidapi.com",
+      "docs": "https://rapidapi.com/search/world-cup-2026-live"
+    },
+    "worldcup-travel-deals": {
+      "description": "Travel/logistics data for team travel burden analysis",
+      "rapidapi_host": "worldcuptraveldealsapi.p.rapidapi.com",
+      "docs": "https://rapidapi.com/search/worldcuptraveldealsapi"
+    }
+  }
+}

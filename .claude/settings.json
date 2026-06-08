@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "sports-odds-intelligence": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: sports-odds-intelligence-api.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    },
+    "football-prediction-wc2026": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: football-prediction-world-cup-2026-match-predictions.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    },
+    "wc2026-live": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: world-cup-2026-live-api.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    },
+    "worldcup-travel-deals": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: worldcuptraveldealsapi.p.rapidapi.com",
+        "--header",
+        "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
+      ]
+    }
+  }
+}
