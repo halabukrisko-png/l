@@ -1,0 +1,24 @@
+[
+  {
+    "team1": "Mexico",
+    "team2": "South Africa",
+    "kickoff_local": "15:00",
+    "kickoff_cet": "22:00",
+    "tz": "CT",
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+    "match_id": null,
+    "group": "A"
+  },
+  {
+    "team1": "South Korea",
+    "team2": "Czech Republic",
+    "kickoff_local": "22:00",
+    "kickoff_cet": "05:00+1",
+    "tz": "CT",
+    "stadium": "Estadio AKRON",
+    "city": "Guadalajara",
+    "match_id": null,
+    "group": "A"
+  }
+]

@@ -1,57 +1,79 @@
 # ⚽ World Cup Analysis Agent — WC 2026
 
-This repository contains the configuration and system prompt for the **FIFA World Cup 2026 AI Football Match Analyst Agent**.
-
-## What This Agent Does
-
-A professional AI football match analyst for WC 2026 that:
-- Runs **3 automated analytical cycles** per match day (morning analysis, pre-match refresh, last-minute tip)
-- Sends **4 types of daily notifications** (morning briefing, lineup confirmations, live alerts, post-match reports)
-- Uses a **5-layer data model**: National Team DNA → Club Form → Tactics/xG → Situational Variables → Market Data
-- Calculates **Poisson probability distributions** for scorelines and flags value bets automatically
-- Draws from **Tier 1 sources**: Opta, StatsBomb, FBref, The Athletic, ESPN BPI, Gracenote/Nielsen, Pinnacle, Betfair Exchange
+Professional AI football analyst for FIFA World Cup 2026. Full 5-layer analysis model, 3 automated cycles, 4 notification types, Poisson probability distributions, value bet detection.
 
 ## Repository Structure
 
 ```
 /
-├── CLAUDE.md                        # This file
+├── CLAUDE.md                          # This file
+├── run.sh                             # Quick launcher — all commands
 ├── system-prompt/
-│   └── WC_Analysis_Agent_EN.md      # Full agent system prompt (English)
+│   └── WC_Analysis_Agent_EN.md        # Full agent system prompt
+├── agent/
+│   ├── wc_agent.py                    # Core: all 3 cycles + 4 notifications
+│   ├── scheduler.py                   # Automatic time-based scheduler
+│   └── matchday.json                  # Today's match schedule (update daily)
+├── scripts/
+│   └── api/
+│       └── rapidapi.py                # All 5 RapidAPI data sources
 ├── .claude/
-│   └── settings.json                # Claude Code settings and MCP servers
-└── mcp-config/
-    └── servers.json                 # MCP server configurations reference
+│   └── settings.json                  # MCP servers + hooks
+├── mcp-config/
+│   └── servers.json                   # MCP server reference
+└── logs/                              # Output from each cycle (auto-created)
 ```
 
-## MCP Servers Configured
+## Quick Start
 
-| Server | Purpose |
-|--------|---------|
-| Sports Odds Intelligence API | Live odds, odds movement, value bet detection |
-| Football Prediction WC 2026 | Match predictions, probability models |
-| World Cup 2026 Live API | Live scores, lineups, match events |
-| WorldCupTravelDealsAPI | Travel/logistics data (travel burden analysis) |
+```bash
+# Morning analysis (CYCLE 1) — run at 08:00 on match days
+bash run.sh morning
 
-## Running the Agent
+# Start full automatic scheduler (all cycles auto-timed)
+bash run.sh scheduler
 
-Load the system prompt from `system-prompt/WC_Analysis_Agent_EN.md` into Claude and the agent will:
+# Manual cycle triggers
+bash run.sh prematch Mexico "South Africa" 15:00 "22:00 CEST"
+bash run.sh lastminute Mexico "South Africa" 15:00
+bash run.sh postmatch Mexico "South Africa" "2:0"
 
-1. **On match days**: Automatically run Morning Analysis (08:00 local), Pre-Match Refresh (60–90 min before kick-off), and Last Minute Tip (30 min before kick-off)
-2. **Throughout the day**: Send Morning Briefing, Lineup Confirmations, Live Alerts, Post-Match Reports, and Evening Summary
-3. **On demand**: Answer any WC 2026 question, run custom match analyses, evaluate betting combinations
+# Test everything works
+bash run.sh test
+```
 
-## Key Agent Rules
+## Automated Cycles (system-prompt/WC_Analysis_Agent_EN.md)
 
-- Always searches for current data before analysing — never writes from memory alone
-- Every tip includes: type + odds + probability % + value % + reasoning
-- Combinations only use independent tips (one tip per match max)
-- Win/Draw/Loss probabilities always sum to ~100%
-- Gamble tips are always clearly labelled
+| Cycle | Trigger | What it does |
+|-------|---------|--------------|
+| 🌅 CYCLE 1 | 08:00 (2h before first kick-off) | Morning analysis — all matches, full 5-layer model, daily tips table |
+| ⚡ CYCLE 2 | 75 min before each kick-off | Pre-match refresh — lineups, odds movement, tip updates |
+| 🔴 CYCLE 3 | 30 min before each kick-off | Last minute tip — confirmed lineups, sharp money signals |
+| 📋 TYPE B | 65 min before each kick-off | Lineup confirmation notification |
+| 🏁 TYPE D | After final whistle | Post-match report — stats, goals, tip results |
 
-## Time Zones
+## 5 MCP Data Sources
 
-WC 2026 is played across USA, Canada, and Mexico. All times shown in **local stadium time** with CET equivalents.
+| Server key | API | Data |
+|-----------|-----|------|
+| `wc2026-live` | world-cup-2026-live-api | Live scores, lineups, match events |
+| `football-prediction-wc2026` | football-prediction-wc2026 | Match predictions, probabilities |
+| `sports-odds-intelligence` | sports-odds-intelligence-api | Live odds, movement, value bets |
+| `worldcup-travel-deals` | worldcuptraveldealsapi | Travel burden, logistics |
+| `zafronix-fifa-wc` | zafronix-fifa-world-cup-api | Squad data, player stats, injuries |
+
+> **Note:** MCP servers require active RapidAPI subscription for each API.
+> Subscribe at: https://rapidapi.com — search for each API name above.
+> Without subscription, the agent falls back to WebSearch automatically.
+
+## Match Day Workflow
+
+1. **Update `agent/matchday.json`** with today's matches (or let Live API auto-detect)
+2. **Run `bash run.sh scheduler`** — all cycles fire automatically at correct times
+3. **Outputs land in `logs/`** — one file per cycle per match
+
+## Time Zones (WC 2026 — USA/Canada/Mexico)
+
 - Eastern Time (ET) = CET − 6h
-- Central Time (CT) = CET − 7h  
+- Central Time (CT) = CET − 7h
 - Pacific Time (PT) = CET − 9h

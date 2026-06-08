@@ -55,5 +55,35 @@
         "x-api-key: afc1c06083mshc8653b5fb32977cp14e319jsn4a3f60aa7fd8"
       ]
     }
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*morning.*analyz|cycle.?1|ranná analýza",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/user/l && python3 agent/wc_agent.py morning 2>&1 | tail -5"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/user/l && python3 scripts/api/rapidapi.py matches 2>/dev/null | python3 -c \"import json,sys; d=json.load(sys.stdin); print('=== LIVE WC DATA ==='); print(json.dumps(d,indent=2)[:1000])\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(cd /home/user/l*)"
+    ]
   }
 }
