@@ -15,6 +15,15 @@ import requests
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).parent.parent
+
+# Load .env
+_env_file = ROOT / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text().splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _, _v = _line.partition("=")
+            os.environ.setdefault(_k.strip(), _v.strip())
 SCRIPTS = ROOT / "scripts"
 LOGS = ROOT / "logs"
 PROMPTS = Path(__file__).parent / "prompts"
@@ -22,6 +31,21 @@ LOGS.mkdir(exist_ok=True)
 
 sys.path.insert(0, str(SCRIPTS / "api"))
 from rapidapi import fetch_match_data, get_today_matches, get_lineups, get_live_score, get_match_stats
+
+# Telegram — optional, only if configured
+def _tg_send(cycle: str, match: str, content: str):
+    if not os.environ.get("TELEGRAM_BOT_TOKEN"):
+        return
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from telegram_bot import send_analysis
+        ok = send_analysis(cycle, match, content)
+        if ok:
+            log(f"Telegram: sent {cycle} for {match}")
+        else:
+            log(f"Telegram: send failed for {cycle}/{match}", "WARN")
+    except Exception as e:
+        log(f"Telegram: error — {e}", "WARN")
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 def log(msg: str, level: str = "INFO"):
@@ -174,6 +198,7 @@ def cycle1_morning(matches: list = None):
 
     output = run_claude(prompt, context)
     path = save_output("cycle1_morning", "all_matches", output)
+    _tg_send("morning", "WC 2026 — All Matches", output)
     log(f"=== CYCLE 1 COMPLETE — output: {path} ===")
     return output
 
@@ -199,6 +224,7 @@ def cycle2_prematch(team1: str, team2: str, kickoff_local: str, kickoff_cet: str
 
     output = run_claude(prompt, context)
     path = save_output("cycle2_prematch", match, output)
+    _tg_send("prematch", match, output)
     log(f"=== CYCLE 2 COMPLETE — output: {path} ===")
     return output
 
@@ -214,6 +240,7 @@ def cycle3_lastminute(team1: str, team2: str, kickoff_local: str):
 
     output = run_claude(prompt, context)
     path = save_output("cycle3_lastminute", match, output)
+    _tg_send("lastminute", match, output)
     log(f"=== CYCLE 3 COMPLETE — output: {path} ===")
     return output
 
@@ -229,6 +256,7 @@ def notify_lineup_confirmed(team1: str, team2: str, kickoff: str, match_id: str 
 
     output = run_claude(prompt, context)
     path = save_output("notify_lineup", match, output)
+    _tg_send("lineup", match, output)
     log(f"=== LINEUP NOTIFICATION COMPLETE — output: {path} ===")
     return output
 
@@ -244,6 +272,7 @@ def notify_postmatch(team1: str, team2: str, score: str, match_id: str = None):
 
     output = run_claude(prompt, context)
     path = save_output("notify_postmatch", match, output)
+    _tg_send("postmatch", match, output)
     log(f"=== POST-MATCH REPORT COMPLETE — output: {path} ===")
     return output
 

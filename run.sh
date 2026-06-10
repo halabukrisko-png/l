@@ -30,6 +30,7 @@ EXAMPLES:
   bash run.sh lineup Mexico "South Africa" 15:00
   bash run.sh postmatch Mexico "South Africa" "2:0"
   bash run.sh scheduler --matchday agent/matchday.json
+  bash run.sh telegram                           → Test Telegram bot connection
 
 EOF
 }
@@ -67,6 +68,10 @@ case "${1:-help}" in
   api)
     shift
     $PYTHON scripts/api/rapidapi.py "$@"
+    ;;
+  telegram)
+    echo "📱 Testing Telegram connection..."
+    $PYTHON agent/telegram_bot.py --test
     ;;
   logs)
     echo "📋 Latest agent outputs:"
