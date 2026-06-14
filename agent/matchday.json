@@ -2,23 +2,25 @@
   {
     "team1": "Mexico",
     "team2": "South Africa",
-    "kickoff_local": "15:00",
-    "kickoff_cet": "22:00",
-    "tz": "CT",
+    "kickoff_local": "13:00",
+    "kickoff_cet": "21:00",
+    "tz": "CST",
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
     "match_id": null,
-    "group": "A"
+    "group": "A",
+    "date": "2026-06-11"
   },
   {
     "team1": "South Korea",
     "team2": "Czech Republic",
-    "kickoff_local": "22:00",
-    "kickoff_cet": "05:00+1",
+    "kickoff_local": "20:00",
+    "kickoff_cet": "04:00+1",
     "tz": "CT",
-    "stadium": "Estadio AKRON",
+    "stadium": "Estadio Akron",
     "city": "Guadalajara",
     "match_id": null,
-    "group": "A"
+    "group": "A",
+    "date": "2026-06-11"
   }
 ]
