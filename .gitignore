@@ -1,5 +1,5 @@
 scripts/api/__pycache__/
 agent/__pycache__/
-logs/*.md
 logs/agent.log
+!logs/cycle*.md
 .env
