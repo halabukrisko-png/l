@@ -9,6 +9,7 @@ import json
 import os
 import sys
 import subprocess
+import tempfile
 from datetime import datetime, timedelta
 from pathlib import Path
 import requests
@@ -68,14 +69,20 @@ def run_claude(prompt: str, context: str = "") -> str:
     """
     Runs Claude Code CLI with a prompt and returns the output.
     The context (API data) is injected into the prompt.
+    Writes prompt to a temp file to avoid CLI stdin size limits.
     """
     full_prompt = prompt
     if context:
         full_prompt = f"{prompt}\n\n---\n## LIVE API DATA (fetched now):\n```json\n{context}\n```"
 
+    tmp = None
     try:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
+            f.write(full_prompt)
+            tmp = f.name
+
         result = subprocess.run(
-            ["claude", "--print", full_prompt],
+            ["claude", "--print", f"@{tmp}"],
             capture_output=True, text=True, timeout=300,
             cwd=str(ROOT)
         )
@@ -89,6 +96,12 @@ def run_claude(prompt: str, context: str = "") -> str:
     except subprocess.TimeoutExpired:
         log("Claude CLI timed out", "ERROR")
         return "[TIMEOUT]"
+    finally:
+        if tmp:
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
 
 # ── Prompt templates ─────────────────────────────────────────────────────────
 def load_system_prompt() -> str:
