@@ -1,24 +1,46 @@
 [
   {
-    "team1": "Mexico",
-    "team2": "South Africa",
-    "kickoff_local": "15:00",
-    "kickoff_cet": "22:00",
-    "tz": "CT",
-    "stadium": "Estadio Azteca",
-    "city": "Mexico City",
+    "team1": "United States",
+    "team2": "Australia",
+    "kickoff_local": "12:00",
+    "kickoff_cet": "21:00",
+    "tz": "PT",
+    "stadium": "Lumen Field",
+    "city": "Seattle",
     "match_id": null,
-    "group": "A"
+    "group": "D"
   },
   {
-    "team1": "South Korea",
-    "team2": "Czech Republic",
-    "kickoff_local": "22:00",
-    "kickoff_cet": "05:00+1",
-    "tz": "CT",
-    "stadium": "Estadio AKRON",
-    "city": "Guadalajara",
+    "team1": "Scotland",
+    "team2": "Morocco",
+    "kickoff_local": "18:00",
+    "kickoff_cet": "00:00+1",
+    "tz": "ET",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough",
     "match_id": null,
-    "group": "A"
+    "group": "C"
+  },
+  {
+    "team1": "Brazil",
+    "team2": "Haiti",
+    "kickoff_local": "21:00",
+    "kickoff_cet": "03:00+1",
+    "tz": "ET",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+    "match_id": null,
+    "group": "C"
+  },
+  {
+    "team1": "Turkiye",
+    "team2": "Paraguay",
+    "kickoff_local": "21:00",
+    "kickoff_cet": "06:00+1",
+    "tz": "PT",
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+    "match_id": null,
+    "group": "D"
   }
 ]
