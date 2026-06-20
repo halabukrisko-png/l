@@ -356,35 +356,50 @@ Use the live statistics data provided.
 """
 
 # ── Cycle 1 — Morning Analysis ───────────────────────────────────────────────
+_CYCLE1_LOCK = LOGS / ".cycle1.lock"
+
 def cycle1_morning(matches: list = None):
-    log("=== CYCLE 1 — MORNING ANALYSIS STARTED ===")
+    # run_claude() shells out to `claude --print <prompt>`, and that prompt itself
+    # contains text like "CYCLE 1" / "MORNING ANALYSIS". If anything (e.g. a
+    # UserPromptSubmit hook) re-triggers this same command on that text, it
+    # recurses and floods agent.log with STARTED lines that never reach COMPLETE.
+    # A lock file makes re-entrant/overlapping invocations a no-op instead.
+    if _CYCLE1_LOCK.exists():
+        log("CYCLE 1 already running (lock present) — skipping re-entrant invocation", "WARN")
+        return None
 
-    raw_matches = get_today_matches()
-    if "error" in raw_matches:
-        log(f"Live API unavailable: {raw_matches.get('message', raw_matches['error'])}", "WARN")
-        matches_text = "Live API data unavailable — use web search for today's WC 2026 schedule."
-    else:
-        matches_text = json.dumps(raw_matches, indent=2)
+    _CYCLE1_LOCK.write_text(str(os.getpid()))
+    try:
+        log("=== CYCLE 1 — MORNING ANALYSIS STARTED ===")
 
-    all_data = {}
-    if matches:
-        for m in matches:
-            t1, t2 = m["team1"], m["team2"]
-            log(f"Fetching data for {t1} vs {t2}...")
-            all_data[f"{t1}_vs_{t2}"] = fetch_match_data(t1, t2)
+        raw_matches = get_today_matches()
+        if "error" in raw_matches:
+            log(f"Live API unavailable: {raw_matches.get('message', raw_matches['error'])}", "WARN")
+            matches_text = "Live API data unavailable — use web search for today's WC 2026 schedule."
+        else:
+            matches_text = json.dumps(raw_matches, indent=2)
 
-    context = json.dumps(all_data, indent=2) if all_data else matches_text
+        all_data = {}
+        if matches:
+            for m in matches:
+                t1, t2 = m["team1"], m["team2"]
+                log(f"Fetching data for {t1} vs {t2}...")
+                all_data[f"{t1}_vs_{t2}"] = fetch_match_data(t1, t2)
 
-    prompt = CYCLE1_TEMPLATE.format(
-        date=datetime.now().strftime("%A, %B %d %Y"),
-        matches=matches_text,
-    )
+        context = json.dumps(all_data, indent=2) if all_data else matches_text
 
-    output = run_claude(prompt, context)
-    path = save_output("cycle1_morning", "all_matches", output)
-    _tg_send("morning", "WC 2026 — All Matches", output)
-    log(f"=== CYCLE 1 COMPLETE — output: {path} ===")
-    return output
+        prompt = CYCLE1_TEMPLATE.format(
+            date=datetime.now().strftime("%A, %B %d %Y"),
+            matches=matches_text,
+        )
+
+        output = run_claude(prompt, context)
+        path = save_output("cycle1_morning", "all_matches", output)
+        _tg_send("morning", "WC 2026 — All Matches", output)
+        log(f"=== CYCLE 1 COMPLETE — output: {path} ===")
+        return output
+    finally:
+        _CYCLE1_LOCK.unlink(missing_ok=True)
 
 # ── Cycle 2 — Pre-Match Refresh ──────────────────────────────────────────────
 def cycle2_prematch(team1: str, team2: str, kickoff_local: str, kickoff_cet: str):
