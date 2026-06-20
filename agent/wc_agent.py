@@ -77,7 +77,7 @@ def run_claude(prompt: str, context: str = "") -> str:
         result = subprocess.run(
             ["claude", "--print", full_prompt],
             capture_output=True, text=True, timeout=300,
-            cwd=str(ROOT)
+            cwd=str(ROOT), stdin=subprocess.DEVNULL
         )
         if result.returncode != 0:
             log(f"Claude CLI error: {result.stderr[:200]}", "ERROR")
