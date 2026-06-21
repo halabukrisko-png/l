@@ -1,24 +1,48 @@
 [
   {
-    "team1": "Mexico",
-    "team2": "South Africa",
-    "kickoff_local": "15:00",
-    "kickoff_cet": "22:00",
-    "tz": "CT",
-    "stadium": "Estadio Azteca",
-    "city": "Mexico City",
+    "team1": "Spain",
+    "team2": "Saudi Arabia",
+    "kickoff_local": "12:00",
+    "kickoff_cet": "18:00",
+    "tz": "ET",
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
     "match_id": null,
-    "group": "A"
+    "group": "H",
+    "status": "FINISHED",
+    "final_score": "4:0"
   },
   {
-    "team1": "South Korea",
-    "team2": "Czech Republic",
-    "kickoff_local": "22:00",
-    "kickoff_cet": "05:00+1",
-    "tz": "CT",
-    "stadium": "Estadio AKRON",
-    "city": "Guadalajara",
+    "team1": "Belgium",
+    "team2": "Iran",
+    "kickoff_local": "15:00",
+    "kickoff_cet": "00:00+1",
+    "tz": "PT",
+    "stadium": "SoFi Stadium",
+    "city": "Inglewood",
     "match_id": null,
-    "group": "A"
+    "group": "G"
+  },
+  {
+    "team1": "Uruguay",
+    "team2": "Cape Verde",
+    "kickoff_local": "18:00",
+    "kickoff_cet": "00:00+1",
+    "tz": "ET",
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami Gardens",
+    "match_id": null,
+    "group": "H"
+  },
+  {
+    "team1": "New Zealand",
+    "team2": "Egypt",
+    "kickoff_local": "18:00",
+    "kickoff_cet": "03:00+1",
+    "tz": "PT",
+    "stadium": "BC Place",
+    "city": "Vancouver",
+    "match_id": null,
+    "group": "G"
   }
 ]
