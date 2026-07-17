@@ -7,355 +7,394 @@
 <meta name="description" content="Barbershop Tobiasi Dann, Štúrova 36, Nová Baňa. Fady, klasické strihy a úprava brady. Objednávky cez Instagram alebo telefonicky na 0914 472 045.">
 
 <!-- ============================================================
-     FONTS — Space Grotesk (display) + Inter (body)
+     FONTS — Rye (vintage barber display) + Lora italic (captions)
+     + Poppins (body). Pairing matched to the Scissors & Scotch
+     reference direction.
      ============================================================ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Self-hosted fonts (assets/fonts/) — no external dependency */
+@font-face{font-family:'Lora';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/lora-400i-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Lora';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/lora-400i-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Lora';font-style:italic;font-weight:600;font-display:swap;src:url('assets/fonts/lora-600i-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Lora';font-style:italic;font-weight:600;font-display:swap;src:url('assets/fonts/lora-600i-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/lora-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Lora';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/lora-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/poppins-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/poppins-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/poppins-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/poppins-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/poppins-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/poppins-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rye';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/rye-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rye';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/rye-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+</style>
 
-<!-- GSAP + ScrollTrigger (CDN). The page is fully functional without
-     them — every animation has a vanilla CSS/JS fallback. -->
+<!-- GSAP (CDN) — the page fully works without it, every animation
+     has a vanilla CSS/JS fallback. -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 
 <style>
 /* ============================================================
-   DESIGN TOKENS
-   Palette: dark editorial street — near-black ink, warm bone,
-   one barber-red accent. No gradients, no purple.
+   DESIGN TOKENS — pulled from the reference site:
+   warm near-black, deep amber-brown panels, copper-orange accent,
+   cream type. No purple anywhere.
    ============================================================ */
 :root{
-  --ink:      #0d0d0e;   /* page background */
-  --coal:     #17171a;   /* raised surfaces  */
-  --line:     #2a2a2e;   /* hairline borders */
-  --bone:     #f0ede6;   /* primary text     */
-  --steel:    #9c9ca2;   /* secondary text   */
-  --red:      #e0372b;   /* accent — barber pole red */
-  --red-deep: #b32b21;   /* accent hover     */
+  --bg:       #0d0805;                /* warm near-black          */
+  --panel:    #1c0f07;                /* raised warm surface      */
+  --amber-hi: #56290f;                /* top of brown panel glow  */
+  --line:     #3a2313;                /* warm hairline            */
+  --cream:    #f3e9d9;                /* primary text             */
+  --sand:     #c9b8a4;                /* secondary text           */
+  --orange:   #e2601c;                /* accent — copper orange   */
+  --orange-hi:#ff7a2f;                /* accent hover / glow      */
 
-  --font-display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
-  --font-body:'Inter',ui-sans-serif,system-ui,sans-serif;
+  --font-display:'Rye',serif;         /* vintage barber headings  */
+  --font-script:'Lora',serif;         /* italic captions/quotes   */
+  --font-body:'Poppins',ui-sans-serif,system-ui,sans-serif;
 
-  /* type scale */
-  --text-hero: clamp(2.6rem, 9vw, 7.5rem);
-  --text-h2:   clamp(1.9rem, 4.5vw, 3.4rem);
-  --text-h3:   clamp(1.15rem, 2vw, 1.4rem);
+  --text-hero: clamp(2rem, 5.5vw, 3.6rem);
+  --text-h2:   clamp(1.6rem, 3.6vw, 2.5rem);
 
   --pad-x: clamp(1.25rem, 4vw, 4rem);
-  --section-y: clamp(4.5rem, 10vw, 8.5rem);
+  --section-y: clamp(4rem, 9vw, 7rem);
 }
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
-html,body{ overflow-x:hidden; }             /* hard rule: no horizontal scroll */
+html,body{ overflow-x:hidden; }              /* hard rule: no horizontal scroll */
 body{
-  background:var(--ink);
-  color:var(--bone);
+  background:var(--bg);
+  color:var(--cream);
   font-family:var(--font-body);
-  font-size:1rem;
-  line-height:1.65;
+  font-size:.98rem;
+  line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 img{ max-width:100%; display:block; }
 a{ color:inherit; }
 button{ font:inherit; cursor:pointer; }
-:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+:focus-visible{ outline:2px solid var(--orange-hi); outline-offset:3px; }
 
-h1,h2,h3{ font-family:var(--font-display); line-height:1.04; letter-spacing:-0.02em; }
+h1,h2,h3{ font-family:var(--font-display); font-weight:400; line-height:1.18; }
 
-.wrap{ max-width:76rem; margin-inline:auto; padding-inline:var(--pad-x); }
+.wrap{ max-width:74rem; margin-inline:auto; padding-inline:var(--pad-x); }
 
-/* eyebrow label — encodes the section topic, uppercase micro type */
-.eyebrow{
-  font-family:var(--font-display);
-  font-size:.78rem; font-weight:700;
-  letter-spacing:.22em; text-transform:uppercase;
-  color:var(--red);
-  display:flex; align-items:center; gap:.75rem;
-}
-.eyebrow::before{ content:""; width:2rem; height:2px; background:var(--red); }
-
-/* barber-pole stripe — the one signature motif, used twice only */
-.pole-stripe{
-  height:6px;
-  background:repeating-linear-gradient(-45deg,
-    var(--red) 0 14px, var(--bone) 14px 28px, var(--ink) 28px 42px);
+/* warm amber panel — the reference's brown-glow section background */
+.warm{
+  background:
+    radial-gradient(120% 90% at 50% 0%, var(--amber-hi) 0%, rgba(86,41,15,0) 55%),
+    linear-gradient(to bottom, #241205, var(--bg));
 }
 
-/* ---------- buttons ---------- */
+/* ---------- buttons (outlined, like the reference) ---------- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-  min-height:48px; padding:.8rem 1.9rem;
-  font-family:var(--font-display); font-weight:700; font-size:.95rem;
-  letter-spacing:.05em; text-transform:uppercase; text-decoration:none;
-  border:2px solid transparent; transition:background .2s ease,color .2s ease,border-color .2s ease;
+  min-height:46px; padding:.65rem 1.7rem;
+  font-family:var(--font-body); font-weight:600; font-size:.82rem;
+  letter-spacing:.14em; text-transform:uppercase; text-decoration:none;
+  border:1px solid var(--cream); color:var(--cream); background:transparent;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
 }
-.btn-red{ background:var(--red); color:#fff; }
-.btn-red:hover{ background:var(--red-deep); }
-.btn-ghost{ border-color:var(--line); color:var(--bone); background:transparent; }
-.btn-ghost:hover{ border-color:var(--bone); }
+.btn:hover{ border-color:var(--orange-hi); color:var(--orange-hi); }
+.btn-solid{ background:var(--orange); border-color:var(--orange); color:#fff; }
+.btn-solid:hover{ background:var(--orange-hi); border-color:var(--orange-hi); color:#fff; }
 
 /* ============================================================
-   1. CINEMATIC INTRO OVERLAY — name glows in, cape slides up
+   1. CINEMATIC INTRO — name glows copper, overlay lifts away
    ============================================================ */
 #intro{
-  position:fixed; inset:0; z-index:80;
-  background:var(--ink);
+  position:fixed; inset:0; z-index:80; background:var(--bg);
   display:flex; align-items:center; justify-content:center;
 }
 #intro .intro-name{
-  font-family:var(--font-display); font-weight:700;
-  font-size:clamp(1.6rem,6vw,4rem); letter-spacing:.04em; text-transform:uppercase;
-  color:var(--bone); opacity:0;
-  text-shadow:0 0 24px rgba(224,55,43,0);
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,5.5vw,3.4rem); text-align:center; padding:0 1rem;
+  color:var(--cream); opacity:0;
 }
-/* vanilla fallback timeline — replaced by GSAP when it loads */
 @keyframes introName{
-  0%{opacity:0; letter-spacing:.3em;}
-  35%{opacity:1; text-shadow:0 0 34px rgba(224,55,43,.55);}
-  75%{opacity:1; text-shadow:0 0 14px rgba(224,55,43,.25);}
-  100%{opacity:1;}
+  0%{opacity:0;}
+  40%{opacity:1; text-shadow:0 0 32px rgba(255,122,47,.75);}
+  100%{opacity:1; text-shadow:0 0 12px rgba(255,122,47,.3);}
 }
 @keyframes introLift{ to{ transform:translateY(-101%);} }
 .no-gsap #intro .intro-name{ animation:introName 1.5s ease forwards; }
 .no-gsap #intro{ animation:introLift .7s cubic-bezier(.7,0,.2,1) 1.7s forwards; }
 
 /* ============================================================
-   2. HEADER + FULL-SCREEN MOBILE MENU
+   2. TOP BAR + HEADER + MOBILE MENU
    ============================================================ */
+.topbar{
+  display:flex; justify-content:flex-end; gap:1.8rem; flex-wrap:wrap;
+  padding:.55rem var(--pad-x) 0;
+  font-size:.74rem; letter-spacing:.06em; color:var(--sand);
+}
+.topbar a{ text-decoration:none; display:flex; align-items:center; gap:.4rem; }
+.topbar a:hover{ color:var(--orange-hi); }
+.topbar svg{ color:var(--orange); flex:none; }
+
 header{
-  position:absolute; top:0; left:0; right:0; z-index:40;
   display:flex; align-items:center; justify-content:space-between;
-  padding:1.1rem var(--pad-x);
+  padding:.8rem var(--pad-x); position:relative; z-index:40;
 }
 .logo{
-  font-family:var(--font-display); font-weight:700; font-size:1.05rem;
-  letter-spacing:.08em; text-transform:uppercase; text-decoration:none;
+  font-family:var(--font-display); font-size:1.15rem; letter-spacing:.02em;
+  text-decoration:none; color:var(--cream); line-height:1.1;
 }
-.logo .pole{ color:var(--red); }
-nav.desktop{ display:none; gap:2.2rem; }
+.logo small{
+  display:block; font-family:var(--font-body); font-size:.6rem;
+  letter-spacing:.4em; text-transform:uppercase; color:var(--orange);
+}
+nav.desktop{ display:none; gap:1.7rem; }
 nav.desktop a{
-  text-decoration:none; font-size:.88rem; font-weight:500; color:var(--steel);
-  letter-spacing:.06em; text-transform:uppercase; transition:color .2s;
+  text-decoration:none; font-size:.78rem; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--cream); transition:color .2s;
 }
-nav.desktop a:hover{ color:var(--bone); }
-@media(min-width:768px){ nav.desktop{ display:flex; } #menuBtn{ display:none; } }
+nav.desktop a:hover{ color:var(--orange-hi); }
+@media(min-width:820px){ nav.desktop{ display:flex; } #menuBtn{ display:none; } }
 
 #menuBtn{
   width:48px; height:48px; background:none; border:0;
   display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px;
 }
-#menuBtn span{ width:26px; height:2px; background:var(--bone); transition:transform .25s,opacity .25s; }
+#menuBtn span{ width:26px; height:2px; background:var(--cream); transition:transform .25s,opacity .25s; }
 #menuBtn[aria-expanded="true"] span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
 #menuBtn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 #menuBtn[aria-expanded="true"] span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
 #mobileMenu{
-  position:fixed; inset:0; z-index:35; background:var(--ink);
-  display:flex; flex-direction:column; justify-content:center; gap:.4rem;
+  position:fixed; inset:0; z-index:35; background:var(--bg);
+  display:flex; flex-direction:column; justify-content:center; gap:.3rem;
   padding:0 var(--pad-x);
   opacity:0; visibility:hidden; transition:opacity .3s ease,visibility .3s;
 }
 #mobileMenu.open{ opacity:1; visibility:visible; }
 #mobileMenu a{
-  font-family:var(--font-display); font-weight:700; text-decoration:none;
-  font-size:clamp(1.9rem,8vw,3rem); padding:.35rem 0; color:var(--bone);
+  font-family:var(--font-display); text-decoration:none;
+  font-size:clamp(1.5rem,7vw,2.4rem); padding:.4rem 0; color:var(--cream);
 }
-#mobileMenu a:hover{ color:var(--red); }
-#mobileMenu .btn{ margin-top:1.6rem; align-self:flex-start; }
+#mobileMenu a:hover{ color:var(--orange-hi); }
+#mobileMenu .btn{ margin-top:1.5rem; align-self:flex-start; }
 
 /* ============================================================
-   3. HERO — canvas dust layer, oversized type, CTA above fold
+   3. HERO — framed photo left, copy right (reference layout)
    ============================================================ */
 .hero{
-  position:relative; min-height:100dvh;
-  display:flex; align-items:flex-end;
-  padding:7rem var(--pad-x) 4.5rem;
-  isolation:isolate;
+  position:relative; isolation:isolate;
+  padding:2.5rem var(--pad-x) var(--section-y);
 }
-#dust{ position:absolute; inset:0; z-index:-1; }        /* canvas particles */
-.hero-photo{
-  position:absolute; inset:0; z-index:-2;
-  background:var(--coal); overflow:hidden;
+.hero::before{   /* warm vignette behind everything */
+  content:""; position:absolute; inset:0; z-index:-2;
+  background:
+    radial-gradient(90% 70% at 70% 20%, #3d1d0b 0%, rgba(61,29,11,0) 60%),
+    linear-gradient(to bottom, #1a0d05, var(--bg));
 }
-.hero-photo img{
-  width:100%; height:100%; object-fit:cover;
-  filter:grayscale(1) contrast(1.08) brightness(.5);   /* B&W editorial treatment */
+#dust{ position:absolute; inset:0; z-index:-1; pointer-events:none; }
+.hero-grid{
+  max-width:74rem; margin-inline:auto;
+  display:grid; gap:2.5rem; align-items:center;
 }
-.hero-photo::after{  /* legibility scrim, bottom-weighted */
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(to top, rgba(13,13,14,.94) 0%, rgba(13,13,14,.55) 45%, rgba(13,13,14,.25) 100%);
+@media(min-width:900px){ .hero-grid{ grid-template-columns:minmax(0,30rem) 1fr; gap:4rem; } }
+
+/* orange-edged photo frame, like the reference hero portrait */
+.photo-frame{
+  position:relative; background:var(--panel); overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:-10px 10px 0 -1px rgba(226,96,28,.9);
 }
-.hero-inner{ max-width:76rem; width:100%; margin-inline:auto; }
-.hero h1{
-  font-size:var(--text-hero); font-weight:700; text-transform:uppercase;
-  letter-spacing:-0.03em; max-width:13ch;
+.photo-frame::before{  /* scissors watermark placeholder until photo loads */
+  content:""; position:absolute; inset:0; margin:auto; width:64px; height:64px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%233a2313" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>') center/contain no-repeat;
 }
-.hero h1 em{ font-style:normal; color:var(--red); }
-.hero p.lede{ max-width:34rem; margin-top:1.4rem; color:var(--steel); font-size:1.05rem; }
-.hero .cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.1rem; }
-.hero .meta{
-  margin-top:2.6rem; display:flex; flex-wrap:wrap; gap:1.5rem;
-  font-size:.85rem; color:var(--steel); letter-spacing:.04em;
+.photo-frame img{ position:relative; width:100%; height:100%; object-fit:cover; }
+.hero .photo-frame{ aspect-ratio:4/5; max-width:30rem; }
+
+.hero-copy h1{ font-size:var(--text-hero); }
+.hero-copy .lede{ margin-top:1.1rem; color:var(--sand); max-width:32rem; }
+.cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.8rem; }
+.hero-meta{
+  margin-top:2rem; display:flex; flex-wrap:wrap; gap:1.4rem;
+  font-size:.8rem; color:var(--sand);
 }
-.hero .meta strong{ color:var(--bone); font-weight:600; }
+.hero-meta a{ text-decoration:none; }
+.hero-meta strong{ color:var(--cream); font-weight:600; }
 
 /* ============================================================
-   4. SECTIONS — shared rhythm
+   4. SECTIONS
    ============================================================ */
 section{ padding-block:var(--section-y); }
-.sec-head{ display:grid; gap:1rem; margin-bottom:3rem; }
-.sec-head h2{ font-size:var(--text-h2); text-transform:uppercase; }
-@media(min-width:900px){
-  .sec-head{ grid-template-columns:1fr minmax(0,26rem); align-items:end; }
-  .sec-head p{ color:var(--steel); }
+.sec-title{ font-size:var(--text-h2); text-align:center; }
+.sec-sub{
+  max-width:44rem; margin:1rem auto 0; text-align:center; color:var(--sand);
 }
 
-/* ---------- services / cenník ---------- */
-.services{ background:var(--coal); }
-.service-list{ border-top:1px solid var(--line); }
-.service{
-  display:grid; grid-template-columns:1fr auto; gap:.35rem 1.5rem;
-  padding:1.5rem 0; border-bottom:1px solid var(--line); align-items:baseline;
+/* ---------- about / barber (text left, photo right) ---------- */
+.about-grid{ display:grid; gap:2.5rem; align-items:center; }
+@media(min-width:900px){ .about-grid{ grid-template-columns:1.1fr minmax(0,26rem); gap:4rem; } }
+.about-grid h2{ font-size:var(--text-h2); }
+.about-grid .script{
+  font-family:var(--font-script); font-style:italic; font-size:1.05rem;
+  color:var(--orange-hi); margin-bottom:.6rem; display:block;
 }
-.service h3{ font-size:var(--text-h3); font-weight:700; }
-.service .dur{ color:var(--steel); font-size:.85rem; }
-.service .price{
-  font-family:var(--font-display); font-weight:700; font-size:1.35rem;
-  font-variant-numeric:tabular-nums; text-align:right;
+.about-grid p{ color:var(--sand); margin-top:1rem; max-width:36rem; }
+.about-grid .photo-frame{ aspect-ratio:4/5; box-shadow:10px 10px 0 -1px rgba(226,96,28,.9); }
+.spec-list{ list-style:none; margin-top:1.3rem; display:grid; gap:.55rem; }
+.spec-list li{ display:flex; gap:.7rem; align-items:center; color:var(--cream); font-size:.92rem; }
+.spec-list svg{ flex:none; color:var(--orange); }
+
+/* ---------- services — photo cards with orange edges ---------- */
+.svc-grid{
+  margin-top:3rem; display:grid; gap:1.6rem;
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
 }
-.service .quote{
-  grid-column:1 / -1; color:var(--steel); font-size:.88rem; font-style:italic;
+.svc-card{ text-align:center; }
+.svc-card .ph{
+  position:relative; aspect-ratio:4/3; background:var(--panel); overflow:hidden;
+  border-top:3px solid var(--orange); border-bottom:3px solid var(--orange);
+  box-shadow:-6px 6px 0 -1px rgba(226,96,28,.55);
 }
-.service .quote b{ color:var(--bone); font-weight:600; font-style:normal; }
-@media(min-width:768px){
-  .service{ grid-template-columns:minmax(0,18rem) 1fr auto; }
-  .service .quote{ grid-column:2; grid-row:1 / span 2; align-self:center; }
+.svc-card .ph::before{
+  content:""; position:absolute; inset:0; margin:auto; width:48px; height:48px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%233a2313" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>') center/contain no-repeat;
 }
+.svc-card img{ position:relative; width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+@media(hover:hover){ .svc-card:hover img{ transform:scale(1.05); } }
+.svc-card h3{
+  font-family:var(--font-script); font-style:italic; font-weight:600;
+  font-size:1.15rem; color:var(--orange-hi); margin-top:1rem;
+}
+.svc-card .pd{ font-size:.85rem; color:var(--sand); margin-top:.25rem; }
+.svc-card .pd b{ color:var(--cream); font-weight:600; }
+.svc-center{ text-align:center; margin-top:2.6rem; }
 
 /* ---------- calculator ---------- */
 .calc-card{
-  border:1px solid var(--line); background:var(--ink);
-  padding:clamp(1.5rem,4vw,3rem); max-width:44rem;
+  margin:3rem auto 0; max-width:42rem;
+  background:var(--panel); border:1px solid var(--line);
+  border-top:3px solid var(--orange);
+  padding:clamp(1.5rem,4vw,2.8rem);
 }
-.calc-card label{ display:block; font-weight:600; margin-bottom:1.4rem; }
-.calc-card output#weeksOut{ color:var(--red); font-family:var(--font-display); font-weight:700; }
+.calc-card label{ display:block; font-weight:500; margin-bottom:1.2rem; }
+.calc-card output#weeksOut{ color:var(--orange-hi); font-weight:600; }
 input[type=range]{
   width:100%; appearance:none; -webkit-appearance:none; height:48px; background:transparent; cursor:pointer;
 }
 input[type=range]::-webkit-slider-runnable-track{ height:4px; background:var(--line); }
 input[type=range]::-webkit-slider-thumb{
   -webkit-appearance:none; width:26px; height:26px; border-radius:50%;
-  background:var(--red); border:4px solid var(--ink); margin-top:-11px;
-  box-shadow:0 0 0 1px var(--red);
+  background:var(--orange); border:4px solid var(--panel); margin-top:-11px;
+  box-shadow:0 0 0 1px var(--orange);
 }
 input[type=range]::-moz-range-track{ height:4px; background:var(--line); }
-input[type=range]::-moz-range-thumb{
-  width:18px; height:18px; border-radius:50%; background:var(--red); border:0;
-}
+input[type=range]::-moz-range-thumb{ width:18px; height:18px; border-radius:50%; background:var(--orange); border:0; }
 .calc-result{
-  display:grid; gap:1.25rem; margin-top:1.8rem;
-  border-top:1px solid var(--line); padding-top:1.8rem;
+  display:grid; gap:1.2rem; margin-top:1.6rem;
+  border-top:1px solid var(--line); padding-top:1.6rem;
 }
 @media(min-width:600px){ .calc-result{ grid-template-columns:1fr 1fr; } }
-.calc-result .k{ font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--steel); }
+.calc-result .k{ font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--sand); }
 .calc-result .v{
-  font-family:var(--font-display); font-weight:700; font-size:1.45rem; margin-top:.3rem;
-  font-variant-numeric:tabular-nums;
+  font-family:var(--font-script); font-style:italic; font-weight:600;
+  font-size:1.3rem; color:var(--orange-hi); margin-top:.3rem;
   transition:opacity .18s ease, transform .18s ease;
 }
 .calc-result .v.flip{ opacity:0; transform:translateY(.4em); }
 
-/* ---------- barber profile ---------- */
-.team{ background:var(--coal); }
-.profile{ display:grid; gap:2.5rem; align-items:center; }
-@media(min-width:900px){ .profile{ grid-template-columns:minmax(0,26rem) 1fr; gap:4rem; } }
-.profile-photo{ position:relative; background:var(--ink); aspect-ratio:4/5; overflow:hidden; }
-.profile-photo img{ width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); }
-.profile-photo::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
-  background:repeating-linear-gradient(-45deg, var(--red) 0 14px, var(--bone) 14px 28px, var(--ink) 28px 42px); }
-.profile h3{ font-size:clamp(1.6rem,3vw,2.2rem); text-transform:uppercase; }
-.profile .role{ color:var(--red); font-weight:600; font-size:.9rem; letter-spacing:.14em; text-transform:uppercase; margin-top:.4rem; }
-.profile p{ color:var(--steel); margin-top:1.1rem; max-width:36rem; }
-.spec-list{ list-style:none; margin-top:1.4rem; display:grid; gap:.6rem; }
-.spec-list li{ display:flex; gap:.7rem; align-items:center; font-size:.95rem; }
-.spec-list svg{ flex:none; color:var(--red); }
-
-/* ---------- gallery ---------- */
-.gallery-grid{ display:grid; gap:2px; grid-template-columns:repeat(2,1fr); }
-@media(min-width:768px){ .gallery-grid{ grid-template-columns:repeat(4,1fr); } }
-.gallery-grid figure{ aspect-ratio:3/4; background:var(--coal); overflow:hidden; position:relative; }
-.gallery-grid img{
-  width:100%; height:100%; object-fit:cover;
-  filter:grayscale(1) contrast(1.06); transition:filter .35s ease, transform .35s ease;
+/* ---------- testimonials (photo left, quote right) ---------- */
+.quote-grid{ display:grid; gap:2.5rem; align-items:center; }
+@media(min-width:900px){ .quote-grid{ grid-template-columns:minmax(0,24rem) 1fr; gap:4rem; } }
+.quote-grid .photo-frame{ aspect-ratio:3/4; }
+blockquote{
+  font-family:var(--font-script); font-style:italic; font-size:1.25rem;
+  line-height:1.75; max-width:34rem;
 }
-@media(hover:hover){
-  .gallery-grid figure:hover img{ filter:grayscale(0) contrast(1); transform:scale(1.03); }
-}
-.gallery-grid figcaption{
-  position:absolute; left:.8rem; bottom:.6rem; font-size:.72rem; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--bone); text-shadow:0 1px 6px rgba(0,0,0,.8);
+blockquote footer{
+  font-family:var(--font-body); font-style:normal; font-size:.82rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--orange-hi); margin-top:1rem;
 }
 
 /* ---------- final CTA ---------- */
-.finale{ text-align:left; }
-.finale h2{ font-size:var(--text-h2); text-transform:uppercase; max-width:18ch; }
-.finale p{ color:var(--steel); max-width:34rem; margin-top:1.2rem; }
-.finale .cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2rem; }
+.finale-grid{ display:grid; gap:2.5rem; align-items:center; }
+@media(min-width:900px){ .finale-grid{ grid-template-columns:1.1fr minmax(0,24rem); gap:4rem; } }
+.finale-grid h2{ font-size:var(--text-h2); }
+.finale-grid p{ color:var(--sand); margin-top:1rem; max-width:34rem; }
+.finale-grid .photo-frame{ aspect-ratio:3/4; box-shadow:10px 10px 0 -1px rgba(226,96,28,.9); }
 
-/* ---------- footer ---------- */
-footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
-.foot-grid{ max-width:76rem; margin-inline:auto; display:grid; gap:2rem; }
-@media(min-width:768px){ .foot-grid{ grid-template-columns:repeat(3,1fr); padding-bottom:0; } footer{ padding-bottom:5.5rem; } }
-.foot-grid h4{ font-family:var(--font-display); font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; color:var(--steel); margin-bottom:.8rem; }
-.foot-grid a{ text-decoration:none; }
-.foot-grid a:hover{ color:var(--red); }
-.copy{ max-width:76rem; margin:2.5rem auto 0; font-size:.8rem; color:var(--steel); }
+/* ---------- footer with icon columns (reference style) ---------- */
+footer{ border-top:1px solid var(--line); padding:3.2rem var(--pad-x) 6.8rem; }
+.foot-grid{
+  max-width:74rem; margin-inline:auto;
+  display:grid; gap:2.2rem;
+}
+@media(min-width:820px){ .foot-grid{ grid-template-columns:1.2fr 1fr 1fr 1fr; } footer{ padding-bottom:5.8rem; } }
+.foot-logo{ font-family:var(--font-display); font-size:1.5rem; line-height:1.2; }
+.foot-logo small{
+  display:block; font-family:var(--font-body); font-size:.62rem;
+  letter-spacing:.42em; text-transform:uppercase; color:var(--orange); margin-top:.3rem;
+}
+.foot-col h4{
+  display:flex; align-items:center; gap:.55rem;
+  font-family:var(--font-script); font-style:italic; font-size:1.05rem;
+  font-weight:600; color:var(--cream); margin-bottom:.7rem;
+}
+.foot-col h4 svg{ color:var(--orange); flex:none; }
+.foot-col p{ font-size:.88rem; color:var(--sand); }
+.foot-col a{ text-decoration:none; }
+.foot-col a:hover{ color:var(--orange-hi); }
+.copy{
+  max-width:74rem; margin:2.6rem auto 0; padding-top:1.4rem;
+  border-top:1px solid var(--line);
+  font-size:.76rem; color:var(--sand);
+}
+.copy a{ color:var(--orange-hi); text-decoration:none; }
 
 /* ============================================================
-   5. STICKY BOOKING BAR — appears after hero
+   5. STICKY BOOKING BAR
    ============================================================ */
 #stickyBar{
   position:fixed; left:0; right:0; bottom:0; z-index:45;
-  background:var(--coal); border-top:1px solid var(--line);
+  background:#160c05; border-top:2px solid var(--orange);
   display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  padding:.65rem var(--pad-x);
-  padding-bottom:calc(.65rem + env(safe-area-inset-bottom));
+  padding:.6rem var(--pad-x);
+  padding-bottom:calc(.6rem + env(safe-area-inset-bottom));
   transform:translateY(110%); transition:transform .3s ease;
 }
 #stickyBar.show{ transform:translateY(0); }
-#stickyBar .info{ font-size:.82rem; color:var(--steel); line-height:1.35; }
-#stickyBar .info strong{ color:var(--bone); }
-#stickyBar .btn{ min-height:44px; padding:.55rem 1.4rem; flex:none; }
+#stickyBar .info{ font-size:.78rem; color:var(--sand); line-height:1.4; }
+#stickyBar .info strong{ color:var(--cream); }
+#stickyBar .btn{ min-height:44px; padding:.5rem 1.3rem; flex:none; }
 
 /* ============================================================
-   6. BOOKING MODAL — zero redirects, DM / call choice
+   6. BOOKING MODAL
    ============================================================ */
 #bookModal{ border:0; padding:0; background:transparent; max-width:min(92vw,26rem); width:100%; margin:auto; }
-#bookModal::backdrop{ background:rgba(0,0,0,.72); }
-.modal-card{ background:var(--coal); border:1px solid var(--line); padding:2rem; }
-.modal-card h3{ font-size:1.4rem; text-transform:uppercase; }
-.modal-card p{ color:var(--steel); font-size:.92rem; margin-top:.7rem; }
-.modal-card .choices{ display:grid; gap:.8rem; margin-top:1.6rem; }
+#bookModal::backdrop{ background:rgba(6,3,1,.78); }
+.modal-card{
+  background:var(--panel); border:1px solid var(--line);
+  border-top:3px solid var(--orange); padding:2rem;
+}
+.modal-card h3{ font-size:1.3rem; }
+.modal-card p{ color:var(--sand); font-size:.9rem; margin-top:.7rem; }
+.modal-card .choices{ display:grid; gap:.8rem; margin-top:1.5rem; }
 .modal-card .choice{
   display:flex; align-items:center; gap:.9rem; text-decoration:none;
   border:1px solid var(--line); padding:1rem 1.1rem; min-height:48px;
   transition:border-color .2s;
 }
-.modal-card .choice:hover{ border-color:var(--red); }
-.modal-card .choice svg{ flex:none; color:var(--red); }
-.modal-card .choice b{ display:block; font-family:var(--font-display); }
-.modal-card .choice small{ color:var(--steel); }
+.modal-card .choice:hover{ border-color:var(--orange-hi); }
+.modal-card .choice svg{ flex:none; color:var(--orange); }
+.modal-card .choice b{ display:block; font-weight:600; }
+.modal-card .choice small{ color:var(--sand); }
 .modal-card .close{
-  margin-top:1.4rem; background:none; border:0; color:var(--steel);
-  font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; min-height:44px;
+  margin-top:1.3rem; background:none; border:0; color:var(--sand);
+  font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; min-height:44px;
 }
-.modal-card .close:hover{ color:var(--bone); }
+.modal-card .close:hover{ color:var(--cream); }
 
 /* ============================================================
-   7. SCROLL REVEALS — vanilla; GSAP upgrades them when present
+   7. SCROLL REVEALS + REDUCED MOTION
    ============================================================ */
-.reveal{ opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .6s ease, transform .6s ease; }
 .reveal.in{ opacity:1; transform:none; }
 
 @media (prefers-reduced-motion: reduce){
@@ -370,18 +409,31 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
 
 <!-- ============ CINEMATIC INTRO ============ -->
 <div id="intro" aria-hidden="true">
-  <div class="intro-name">Tobiasi&nbsp;Dann</div>
+  <div class="intro-name">Tobiasi Dann</div>
+</div>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <a href="tel:+421914472045">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 13 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2L8 9.5a16 16 0 0 0 6.5 6.5l1.1-1.1a2 2 0 0 1 2-.5c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9z"/></svg>
+    0914 472 045
+  </a>
+  <span style="display:flex;align-items:center;gap:.4rem">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e2601c" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Štúrova 36, Nová Baňa
+  </span>
 </div>
 
 <!-- ============ HEADER ============ -->
 <header>
-  <a class="logo" href="#top">Tobiasi<span class="pole">/</span>Dann</a>
+  <a class="logo" href="#top">Tobiasi Dann<small>Barbershop</small></a>
   <nav class="desktop" aria-label="Hlavná navigácia">
-    <a href="#sluzby">Cenník</a>
+    <a href="#onas">O nás</a>
+    <a href="#sluzby">Služby</a>
     <a href="#kalkulacka">Kalkulačka</a>
-    <a href="#barber">Barber</a>
-    <a href="#galeria">Galéria</a>
+    <a href="#recenzie">Recenzie</a>
     <a href="#kontakt">Kontakt</a>
+    <a href="#" class="js-book" style="color:var(--orange-hi)">Objednať sa</a>
   </nav>
   <button id="menuBtn" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
@@ -390,91 +442,119 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
 
 <!-- ============ FULL-SCREEN MOBILE MENU ============ -->
 <div id="mobileMenu" role="dialog" aria-label="Menu">
-  <a href="#sluzby">Cenník</a>
+  <a href="#onas">O nás</a>
+  <a href="#sluzby">Služby</a>
   <a href="#kalkulacka">Kalkulačka</a>
-  <a href="#barber">Barber</a>
-  <a href="#galeria">Galéria</a>
+  <a href="#recenzie">Recenzie</a>
   <a href="#kontakt">Kontakt</a>
-  <button class="btn btn-red js-book">Objednať sa</button>
+  <button class="btn btn-solid js-book">Objednať sa</button>
 </div>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-label="Úvod">
-  <div class="hero-photo">
-    <!-- PHOTO SLOT: assets/hero.jpg — širokouhlý záber z barbershopu.
-         Stránka funguje aj bez fotky (tmavé pozadie + častice). -->
-    <img src="assets/hero.jpg" alt="Tobiasi pri práci v barbershope" onerror="this.remove()">
-  </div>
   <canvas id="dust" aria-hidden="true"></canvas>
-
-  <div class="hero-inner">
-    <p class="eyebrow">Barbershop · Nová Baňa</p>
-    <h1>Strih, ktorý<br>nepotrebuje <em>filter</em>.</h1>
-    <p class="lede">Fady, klasické strihy a úprava brady na Štúrovej 36.
-    Jeden barber, jedno kreslo, žiadny stres — každý termín má toľko času, koľko potrebuje.</p>
-    <div class="cta-row">
-      <button class="btn btn-red js-book">Objednať sa</button>
-      <a class="btn btn-ghost" href="#sluzby">Cenník</a>
+  <div class="hero-grid">
+    <div class="photo-frame reveal">
+      <!-- PHOTO SLOT: assets/hero.jpg — portrét / záber z kresla -->
+      <img src="assets/hero.jpg" alt="Tobiasi pri práci v barbershope" onerror="this.remove()">
     </div>
-    <div class="meta">
-      <span><strong>Štúrova 36</strong>, Nová Baňa</span>
-      <span><a href="tel:+421914472045" style="text-decoration:none"><strong>0914 472 045</strong></a></span>
-      <span><a href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener" style="text-decoration:none"><strong>@tobiasi_dann</strong></a></span>
+    <div class="hero-copy reveal">
+      <h1>O strih vyššie</h1>
+      <p class="lede">Barbershop Tobiasi Dann v Novej Bani spája poctivé barberské remeslo
+      s pokojom, aký v strihacej rýchlovke nezažiješ. Fady, klasické strihy a úprava brady —
+      jeden barber, jedno kreslo a termín len pre teba.</p>
+      <div class="cta-row">
+        <a class="btn" href="#sluzby">Služby</a>
+        <button class="btn btn-solid js-book">Objednať sa</button>
+      </div>
+      <div class="hero-meta">
+        <span><strong>Štúrova 36</strong>, Nová Baňa</span>
+        <a href="tel:+421914472045"><strong>0914 472 045</strong></a>
+        <a href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener"><strong>@tobiasi_dann</strong></a>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="pole-stripe" aria-hidden="true"></div>
-
-<!-- ============ SERVICES + PRICING ============ -->
-<section class="services" id="sluzby">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <p class="eyebrow">Cenník</p>
-        <h2>Žiadne skryté<br>poplatky</h2>
+<!-- ============ ABOUT / BARBER ============ -->
+<section class="warm" id="onas">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="script">Kto ťa strihá</span>
+      <h2>Moderná starostlivosť s poctivým remeslom</h2>
+      <p>Každý strih robím sám — od prvej konzultácie po posledný detail kontúry.
+      Sadneš si, povieme si, čo chceš, a odídeš presne s tým. Žiadne odovzdávanie
+      medzi kreslami, žiadny stres.</p>
+      <ul class="spec-list">
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          Fady a textúrované strihy
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+          Presné kontúry britvou
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
+          Úprava brady s horúcim uterákom
+        </li>
+      </ul>
+      <div class="cta-row">
+        <button class="btn btn-solid js-book">Objednať sa</button>
+        <a class="btn" href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">Instagram</a>
       </div>
-      <p>Cena, ktorú vidíš, je cena, ktorú platíš. Každá služba má vyhradený čas — nikdy nestriháme na bežiacom páse.</p>
     </div>
+    <div class="photo-frame reveal">
+      <!-- PHOTO SLOT: assets/tobiasi.jpg — portrét barbera -->
+      <img src="assets/tobiasi.jpg" alt="Tobiasi, zakladateľ barbershopu" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="sluzby">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Služby</h2>
+    <p class="sec-sub reveal">Ceny bez prekvapení — cena, ktorú vidíš, je cena, ktorú platíš.
+    Každá služba má vyhradený čas, nikdy nestriháme na bežiacom páse.</p>
 
     <!-- CENY: uprav podľa aktuálneho cenníka — sú to východiskové hodnoty -->
-    <div class="service-list reveal">
-      <div class="service">
-        <div><h3>Klasický strih</h3><span class="dur">45 min</span></div>
-        <p class="quote">„Konečne barber, ktorý počúva, čo chcem." — <b>Marek, Nová Baňa</b></p>
-        <span class="price">15 €</span>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <div class="ph"><img src="assets/work-1.jpg" alt="Klasický pánsky strih" loading="lazy" onerror="this.remove()"></div>
+        <h3>Klasický strih</h3>
+        <p class="pd">45 min · <b>15 €</b></p>
       </div>
-      <div class="service">
-        <div><h3>Fade / skin fade</h3><span class="dur">50 min</span></div>
-        <p class="quote">„Najčistejší fade, aký som kedy mal." — <b>Dávid</b></p>
-        <span class="price">18 €</span>
+      <div class="svc-card">
+        <div class="ph"><img src="assets/work-2.jpg" alt="Fade strih" loading="lazy" onerror="this.remove()"></div>
+        <h3>Fade / skin fade</h3>
+        <p class="pd">50 min · <b>18 €</b></p>
       </div>
-      <div class="service">
-        <div><h3>Úprava brady</h3><span class="dur">30 min</span></div>
-        <p class="quote">„Horúci uterák a britva — iná liga." — <b>Peter</b></p>
-        <span class="price">12 €</span>
+      <div class="svc-card">
+        <div class="ph"><img src="assets/work-3.jpg" alt="Úprava brady britvou" loading="lazy" onerror="this.remove()"></div>
+        <h3>Úprava brady</h3>
+        <p class="pd">30 min · <b>12 €</b></p>
       </div>
-      <div class="service">
-        <div><h3>Komplet — strih + brada</h3><span class="dur">75 min</span></div>
-        <p class="quote">„Vyjdeš von ako nový človek." — <b>Tomáš</b></p>
-        <span class="price">25 €</span>
+      <div class="svc-card">
+        <div class="ph"><img src="assets/work-4.jpg" alt="Strih a úprava brady" loading="lazy" onerror="this.remove()"></div>
+        <h3>Komplet — strih + brada</h3>
+        <p class="pd">75 min · <b>25 €</b></p>
       </div>
+    </div>
+    <div class="svc-center reveal">
+      <button class="btn js-book">Objednať sa</button>
     </div>
   </div>
 </section>
 
-<!-- ============ GROOMING CALCULATOR ============ -->
-<section id="kalkulacka">
+<!-- ============ CALCULATOR ============ -->
+<section class="warm" id="kalkulacka">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <p class="eyebrow">Kalkulačka údržby</p>
-        <h2>Koľko to už<br>nechávaš rásť?</h2>
-      </div>
-      <p>Posuň jazdec podľa toho, koľko týždňov ubehlo od posledného strihu — odporučíme ti službu, čas aj cenu.</p>
-    </div>
+    <h2 class="sec-title reveal">Koľko to už nechávaš rásť?</h2>
+    <p class="sec-sub reveal">Posuň jazdec podľa toho, koľko týždňov ubehlo od posledného
+    strihu — odporučíme ti službu, čas aj cenu.</p>
 
     <div class="calc-card reveal">
       <label for="weeks">Týždne od posledného strihu:
@@ -496,81 +576,45 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
   </div>
 </section>
 
-<!-- ============ BARBER PROFILE ============ -->
-<section class="team" id="barber">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <p class="eyebrow">Kto ťa strihá</p>
-        <h2>Neobjednávaš si<br>termín. Objednávaš<br>si barbera.</h2>
-      </div>
+<!-- ============ TESTIMONIALS ============ -->
+<section id="recenzie">
+  <div class="wrap quote-grid">
+    <div class="photo-frame reveal">
+      <!-- PHOTO SLOT: assets/work-3.jpg alebo fotka interiéru / barber pole -->
+      <img src="assets/pole.jpg" alt="Interiér barbershopu" loading="lazy" onerror="this.remove()">
     </div>
-
-    <div class="profile reveal">
-      <div class="profile-photo">
-        <!-- PHOTO SLOT: assets/tobiasi.jpg — portrét barbera -->
-        <img src="assets/tobiasi.jpg" alt="Tobiasi, zakladateľ barbershopu" onerror="this.remove()">
-      </div>
-      <div>
-        <h3>Tobiasi</h3>
-        <p class="role">Zakladateľ &amp; barber</p>
-        <p>Každý strih robím sám, od prvej konzultácie po posledný detail kontúry.
-        Žiadne odovzdávanie medzi kreslami — sadneš si, povieme si, čo chceš, a odídeš presne s tým.</p>
-        <ul class="spec-list">
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-            Fady a textúrované strihy
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
-            Presné kontúry britvou
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z"/><path d="M8 12h8"/></svg>
-            Úprava brady s horúcim uterákom
-          </li>
-        </ul>
-        <div class="cta-row" style="margin-top:1.8rem; display:flex; gap:.9rem; flex-wrap:wrap;">
-          <button class="btn btn-red js-book">Objednať sa</button>
-          <a class="btn btn-ghost" href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">Instagram</a>
-        </div>
+    <div class="reveal">
+      <span class="script" style="font-family:var(--font-script);font-style:italic;color:var(--orange-hi)">Recenzie</span>
+      <h2 style="font-size:var(--text-h2);margin-top:.4rem">Čo hovoria klienti</h2>
+      <blockquote>
+        „Konečne barber, ktorý počúva, čo chcem. Fade mal presne tú výšku,
+        na akej sme sa dohodli, a brada s horúcim uterákom je iná liga.
+        Odchádzal som ako nový človek."
+        <footer>— Marek, Nová Baňa</footer>
+      </blockquote>
+      <div class="cta-row">
+        <a class="btn" href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">Viac na Instagrame</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ GALLERY ============ -->
-<section id="galeria">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <p class="eyebrow">Galéria</p>
-        <h2>Práca hovorí<br>za nás</h2>
-      </div>
-      <p>Čerstvé strihy priamo z kresla. Viac nájdeš na Instagrame <a href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">@tobiasi_dann</a>.</p>
-    </div>
-  </div>
-  <!-- PHOTO SLOTS: assets/work-1..4.jpg — fotky strihov z IG -->
-  <!-- keď fotka chýba, ostane tmavý placeholder s popisom -->
-  <div class="gallery-grid reveal">
-    <figure><img src="assets/work-1.jpg" alt="Strih — curly top s fade-om" loading="lazy" onerror="this.remove()"><figcaption>Curly fade</figcaption></figure>
-    <figure><img src="assets/work-2.jpg" alt="Úprava brady zákazníka" loading="lazy" onerror="this.remove()"><figcaption>Beard trim</figcaption></figure>
-    <figure><img src="assets/work-3.jpg" alt="Editoriálna čiernobiela fotka z barbershopu" loading="lazy" onerror="this.remove()"><figcaption>Studio</figcaption></figure>
-    <figure><img src="assets/work-4.jpg" alt="Detail strihu" loading="lazy" onerror="this.remove()"><figcaption>Detail</figcaption></figure>
-  </div>
-</section>
-
-<div class="pole-stripe" aria-hidden="true"></div>
 
 <!-- ============ FINAL CTA ============ -->
-<section class="finale" id="objednat">
-  <div class="wrap reveal">
-    <p class="eyebrow">Objednávka</p>
-    <h2>Sadni si. O zvyšok sa postaráme.</h2>
-    <p>Objednávky bežia cez správu na Instagrame alebo telefonicky — napíš, kedy sa ti hodí, a dohodneme presný termín.</p>
-    <div class="cta-row">
-      <button class="btn btn-red js-book">Objednať sa</button>
-      <a class="btn btn-ghost" href="tel:+421914472045">Zavolať 0914 472 045</a>
+<section class="warm" id="objednat">
+  <div class="wrap finale-grid">
+    <div class="reveal">
+      <span class="script" style="font-family:var(--font-script);font-style:italic;color:var(--orange-hi)">Objednávka</span>
+      <h2 style="margin-top:.4rem">Zaži Tobiasi Dann na vlastnej koži</h2>
+      <p>Nenechaj to zarásť. Objednávky bežia cez správu na Instagrame alebo telefonicky —
+      napíš, kedy sa ti hodí, a dohodneme presný termín. Odpovedáme zvyčajne do pár hodín.</p>
+      <div class="cta-row">
+        <button class="btn btn-solid js-book">Objednať sa</button>
+        <a class="btn" href="tel:+421914472045">Zavolať</a>
+      </div>
+    </div>
+    <div class="photo-frame reveal">
+      <!-- PHOTO SLOT: assets/finale.jpg — editoriálna fotka -->
+      <img src="assets/finale.jpg" alt="Tobiasi pri strihaní klienta" loading="lazy" onerror="this.remove()">
     </div>
   </div>
 </section>
@@ -580,18 +624,28 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
 <!-- ============ FOOTER ============ -->
 <footer id="kontakt">
   <div class="foot-grid">
-    <div>
-      <h4>Kde nás nájdeš</h4>
+    <div class="foot-logo">Tobiasi Dann<small>Barbershop</small></div>
+    <div class="foot-col">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 13 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2L8 9.5a16 16 0 0 0 6.5 6.5l1.1-1.1a2 2 0 0 1 2-.5c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9z"/></svg>
+        Zavolaj nám
+      </h4>
+      <p><a href="tel:+421914472045">0914 472 045</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Nájdeš nás
+      </h4>
       <p>Štúrova 36<br>968 01 Nová Baňa</p>
     </div>
-    <div>
-      <h4>Objednávky</h4>
-      <p><a href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">Instagram @tobiasi_dann</a><br>
-      <a href="tel:+421914472045">0914 472 045</a></p>
-    </div>
-    <div>
-      <h4>Ako to funguje</h4>
-      <p>Iba na objednávku.<br>Napíš DM alebo zavolaj — termín potvrdíme obratom.</p>
+    <div class="foot-col">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Objednávky
+      </h4>
+      <p><a href="https://instagram.com/tobiasi_dann" target="_blank" rel="noopener">@tobiasi_dann</a><br>
+      Iba na objednávku — DM alebo telefón</p>
     </div>
   </div>
   <p class="copy">© 2026 Barbershop Tobiasi Dann · Nová Baňa</p>
@@ -600,7 +654,7 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
 <!-- ============ STICKY BOOKING BAR ============ -->
 <div id="stickyBar" role="region" aria-label="Rýchla objednávka">
   <p class="info"><strong>Tobiasi Dann</strong> · Štúrova 36, Nová Baňa<br>Iba na objednávku — DM alebo telefón</p>
-  <button class="btn btn-red js-book">Objednať sa</button>
+  <button class="btn btn-solid js-book">Objednať sa</button>
 </div>
 
 <!-- ============ BOOKING MODAL ============ -->
@@ -624,8 +678,7 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
 
 <script>
 /* ============================================================
-   All behaviour is vanilla JS. GSAP (if it loads) upgrades the
-   intro + scroll reveals; nothing breaks without it.
+   Vanilla JS everywhere; GSAP (if it loads) upgrades the intro.
    ============================================================ */
 (function(){
   "use strict";
@@ -636,25 +689,24 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
   function killIntro(){ if(intro){ intro.remove(); intro = null; } }
   if(reduceMotion){ killIntro(); }
   else {
-    // Wait one tick for the deferred GSAP script.
     window.addEventListener("DOMContentLoaded", function(){
       if(window.gsap){
         var tl = gsap.timeline({ onComplete: killIntro });
         tl.fromTo("#intro .intro-name",
-            { opacity:0, letterSpacing:"0.3em" },
-            { opacity:1, letterSpacing:"0.04em", duration:.9, ease:"power2.out" })
+            { opacity:0 },
+            { opacity:1, duration:.8, ease:"power2.out" })
           .to("#intro .intro-name",
-            { textShadow:"0 0 34px rgba(224,55,43,.55)", duration:.35, yoyo:true, repeat:1 }, "-=.3")
+            { textShadow:"0 0 34px rgba(255,122,47,.8)", duration:.35, yoyo:true, repeat:1 }, "-=.25")
           .to("#intro", { yPercent:-101, duration:.7, ease:"power3.inOut", delay:.15 }); // cape pull-off
       } else {
         document.documentElement.classList.add("no-gsap");   // CSS keyframe fallback
         setTimeout(killIntro, 2600);
       }
     });
-    setTimeout(killIntro, 4000);   // absolute safety net — never trap the user
+    setTimeout(killIntro, 4000);   // safety net — never trap the user
   }
 
-  /* ---------- 2. Canvas: drifting fade-dust particles ---------- */
+  /* ---------- 2. Canvas: warm ember dust in hero ---------- */
   var canvas = document.getElementById("dust");
   if(canvas && !reduceMotion){
     var ctx = canvas.getContext("2d"), parts = [], running = true, W, H;
@@ -665,9 +717,9 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
     }
     function make(){
       return { x:Math.random()*W, y:H + Math.random()*40,
-               r:Math.random()*2.2 + .6,
-               vy:-(Math.random()*.35 + .12), vx:(Math.random()-.5)*.22,
-               a:Math.random()*.35 + .08 };
+               r:Math.random()*2 + .5,
+               vy:-(Math.random()*.3 + .1), vx:(Math.random()-.5)*.2,
+               a:Math.random()*.3 + .06 };
     }
     function tick(){
       if(!running) return;
@@ -678,15 +730,14 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
         if(p.y < -10 || p.x < -10 || p.x > W+10) parts[i] = make();
         ctx.beginPath();
         ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle = "rgba(240,237,230,"+p.a+")";
+        ctx.fillStyle = "rgba(255,150,70,"+p.a+")";   /* warm ember tint */
         ctx.fill();
       }
       requestAnimationFrame(tick);
     }
     size();
-    for(var i=0;i<55;i++){ var p=make(); p.y=Math.random()*H; parts.push(p); }
+    for(var i=0;i<45;i++){ var p=make(); p.y=Math.random()*H; parts.push(p); }
     window.addEventListener("resize", size);
-    // pause when hero is off-screen — no wasted frames
     new IntersectionObserver(function(e){
       var vis = e[0].isIntersecting;
       if(vis && !running){ running = true; tick(); }
@@ -715,10 +766,10 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
       priceOut= document.getElementById("calcPrice");
   // tiers: weeks → recommended service / time / price (edit alongside cenník)
   function tier(w){
-    if(w <= 3) return { s:"Refresh kontúr",          p:"25 min · 10 €" };
-    if(w <= 6) return { s:"Klasický strih",           p:"45 min · 15 €" };
-    if(w <= 9) return { s:"Fade + úprava brady",      p:"60 min · 22 €" };
-    return       { s:"Kompletná transformácia",       p:"75 min · 25 €" };
+    if(w <= 3) return { s:"Refresh kontúr",        p:"25 min · 10 €" };
+    if(w <= 6) return { s:"Klasický strih",         p:"45 min · 15 €" };
+    if(w <= 9) return { s:"Fade + úprava brady",    p:"60 min · 22 €" };
+    return       { s:"Kompletná transformácia",     p:"75 min · 25 €" };
   }
   function flip(el, txt){
     if(el.textContent === txt) return;
@@ -737,7 +788,8 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
   /* ---------- 5. Booking modal ---------- */
   var modal = document.getElementById("bookModal");
   document.querySelectorAll(".js-book").forEach(function(b){
-    b.addEventListener("click", function(){
+    b.addEventListener("click", function(e){
+      e.preventDefault();
       closeMenu();
       if(typeof modal.showModal === "function") modal.showModal();
       else modal.setAttribute("open","");            // <dialog> fallback
@@ -771,14 +823,6 @@ footer{ border-top:1px solid var(--line); padding:3rem var(--pad-x) 6.5rem; }
   menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
   document.addEventListener("keydown", function(e){
     if(e.key === "Escape") closeMenu();
-  });
-
-  /* ---------- 8. GSAP scroll upgrade (optional layer) ---------- */
-  window.addEventListener("load", function(){
-    if(window.gsap && window.ScrollTrigger && !reduceMotion){
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.from(".hero h1", { y:40, opacity:0, duration:.8, ease:"power2.out", delay:1.9 });
-    }
   });
 })();
 </script>
