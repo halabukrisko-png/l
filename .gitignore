@@ -3,3 +3,4 @@ agent/__pycache__/
 logs/*.md
 logs/agent.log
 .env
+__pycache__/
