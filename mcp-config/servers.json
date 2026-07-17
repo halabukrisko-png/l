@@ -20,6 +20,11 @@
       "description": "Travel/logistics data for team travel burden analysis",
       "rapidapi_host": "worldcuptraveldealsapi.p.rapidapi.com",
       "docs": "https://rapidapi.com/search/worldcuptraveldealsapi"
+    },
+    "21st": {
+      "description": "21st.dev Magic MCP \u2014 UI component generation and search",
+      "url": "https://21st.dev/api/mcp",
+      "docs": "https://21st.dev"
     }
   }
 }
